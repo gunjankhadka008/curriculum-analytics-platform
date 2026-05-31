@@ -143,7 +143,7 @@ with tab_overview:
                       hover_data=["course_code", "course_name", "semester", "credits", "is_core", "skill"],
                       labels={"gpa": "GPA (10-pt)", "dfw_rate": "DFW Rate"},
                       title="Courses: GPA vs DFW")
-    st.plotly_chart(fig1, use_container_width=True)
+    st.plotly_chart(fig1, width="stretch")
     st.download_button("Download course KPIs (CSV)",
                        course_kpi.to_csv(index=False).encode("utf-8"),
                        file_name="course_kpis.csv", mime="text/csv")
@@ -157,9 +157,9 @@ with tab_overview:
         trend = A.grade_trend(F)
         if not trend.empty:
             st.plotly_chart(px.line(trend, x="year", y="gpa", color="term", markers=True,
-                                    title="Mean GPA by Term"), use_container_width=True)
+                                    title="Mean GPA by Term"), width="stretch")
             st.plotly_chart(px.line(trend, x="year", y="pass_rate", color="term", markers=True,
-                                    title="Pass Rate by Term"), use_container_width=True)
+                                    title="Pass Rate by Term"), width="stretch")
         else:
             st.info("No grade/term trend available.")
 
@@ -175,7 +175,7 @@ with tab_courses:
     st.plotly_chart(px.bar(skill_view.fillna({"skill": "(No Tag)"}),
                            x="skill", y="mean_dfw",
                            hover_data=["courses", "enrollments", "mean_gpa"],
-                           title="Skill-wise DFW"), use_container_width=True)
+                           title="Skill-wise DFW"), width="stretch")
     st.download_button("Download skill summary (CSV)",
                        skill_view.to_csv(index=False).encode("utf-8"),
                        file_name="skill_summary.csv", mime="text/csv")
@@ -195,12 +195,12 @@ with tab_models:
         st.dataframe(rf_importances)
         fig_rf = px.bar(rf_importances.head(10), x="Feature", y="Importance",
                         title="Random Forest Feature Importances", color="Importance")
-        st.plotly_chart(fig_rf, use_container_width=True)
+        st.plotly_chart(fig_rf, width="stretch")
         st.download_button("Download RF importances (CSV)",
                            rf_importances.to_csv(index=False).encode("utf-8"),
                            file_name="rf_importances.csv", mime="text/csv")
         try:
-            png = pio.to_image(fig_rf, format="png", engine="kaleido")
+            png = pio.to_image(fig_rf, format="png")
             st.download_button("Download RF importances (PNG)", png,
                                file_name="rf_importances.png", mime="image/png")
         except Exception:
@@ -255,7 +255,7 @@ with tab_insights:
     if corr is not None:
         st.plotly_chart(px.imshow(corr, text_auto=True, aspect="auto",
                                   title="Numeric Feature Correlation"),
-                        use_container_width=True)
+                        width="stretch")
     else:
         st.info("Not enough numeric columns for a correlation heatmap.")
 
