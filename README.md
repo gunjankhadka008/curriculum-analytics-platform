@@ -80,7 +80,7 @@ power the web app, the Power BI export, and any notebooks or tests.
 ### 1. Clone and set up
 
 ```bash
-git clone https://github.com/<your-username>/curriculum-analytics-platform.git
+git clone https://github.com/gunjankhadka008/curriculum-analytics-platform.git
 cd curriculum-analytics-platform
 
 python -m venv .venv
@@ -200,4 +200,4 @@ Released under the MIT License — see [LICENSE](LICENSE).
 
 ##  Author
 
-**Gunjan Khadka** — [GitHub](https://github.com/<your-username>) · [LinkedIn](https://www.linkedin.com/in/<your-handle>)
+**Gunjan Khadka** — [GitHub](https://github.com/gunjankhadka008) · [LinkedIn](https://www.linkedin.com/in/gunjan-khadka-31685b411/)
