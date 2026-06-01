@@ -9,7 +9,7 @@ dashboard layer for executive reporting.
 > Built on a configurable synthetic dataset so it runs out of the box, and
 > accepts your own institutional CSVs with no code changes.
 
-**▶️ Live demo:** _add your Streamlit Community Cloud URL here after deploying (see [Deploy](#-deploy-a-live-demo))._
+**▶️ Live demo:** https://curriculum-analytics-platform.streamlit.app/
 
 ---
 
@@ -80,7 +80,7 @@ power the web app, the Power BI export, and any notebooks or tests.
 ### 1. Clone and set up
 
 ```bash
-git clone https://github.com/<your-username>/curriculum-analytics-platform.git
+git clone https://github.com/gunjankhadka008/curriculum-analytics-platform.git
 cd curriculum-analytics-platform
 
 python -m venv .venv
@@ -187,9 +187,14 @@ This writes a star schema (`dim_students`, `dim_courses`, `dim_course_skills`,
 
 ## 🛣️ Roadmap
 
+Completed:
+- [x] Balanced-accuracy and confusion-matrix reporting for the classifier
+- [x] Unit tests for the `analytics` module
+- [x] Live demo deployed on Streamlit Community Cloud
+
+Planned:
 - [ ] Replace heuristic at-risk scoring with a calibrated model
-- [ ] Add confusion matrices and balanced-accuracy reporting
-- [ ] Unit tests for the `analytics` module
+- [ ] Add the Power BI dashboard screenshot (built in Power BI Desktop)
 - [ ] Optional database backend for institutional deployments
 
 ---
@@ -200,4 +205,4 @@ Released under the MIT License — see [LICENSE](LICENSE).
 
 ## 👤 Author
 
-**Gunjan Khadka** — [GitHub](https://github.com/<your-username>) · [LinkedIn](https://www.linkedin.com/in/<your-handle>)
+**Gunjan Khadka** — [GitHub](https://github.com/gunjankhadka008) · [LinkedIn](https://www.linkedin.com/in/REPLACE-WITH-YOUR-LINKEDIN-HANDLE)
