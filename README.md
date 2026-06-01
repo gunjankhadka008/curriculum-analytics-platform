@@ -1,4 +1,4 @@
-#  Curriculum Analytics Platform for Higher Education
+# Curriculum Analytics Platform for Higher Education
 
 An interactive analytics application that helps academic departments understand
 student performance, identify difficult courses, flag at-risk students, and
@@ -9,11 +9,11 @@ dashboard layer for executive reporting.
 > Built on a configurable synthetic dataset so it runs out of the box, and
 > accepts your own institutional CSVs with no code changes.
 
-**▶️ Live demo:** https://curriculum-analytics-platform.streamlit.app/
+** Live demo:** https://curriculum-analytics-platform.streamlit.app/
 
 ---
 
-##  Features
+## Features
 
 - **KPI overview** — pass rate, mean GPA (10-point scale), average absences, and total enrollments, all responsive to sidebar filters (year, term, department, semester).
 - **Course difficulty index** — a composite score combining DFW rate, GPA, absences, and re-attempts to surface the hardest courses.
@@ -30,7 +30,7 @@ dashboard layer for executive reporting.
 
 ---
 
-##  Demo
+## Demo
 
 ![Overview dashboard](docs/images/overview.png)
 
@@ -40,7 +40,7 @@ Power BI Desktop and dropped in here.*
 
 ---
 
-##  Tech Stack
+## Tech Stack
 
 | Layer | Tools |
 |-------|-------|
@@ -53,7 +53,7 @@ Power BI Desktop and dropped in here.*
 
 ---
 
-##  Project Structure
+## Project Structure
 
 ```
 curriculum-analytics-platform/
@@ -75,7 +75,7 @@ power the web app, the Power BI export, and any notebooks or tests.
 
 ---
 
-##  Getting Started
+## Getting Started
 
 ### 1. Clone and set up
 
@@ -122,7 +122,7 @@ models, and diagnostics).
 
 ---
 
-##  Deploy a live demo
+## Deploy a live demo
 
 The app deploys free on **Streamlit Community Cloud**, straight from this repo:
 
@@ -137,7 +137,7 @@ data upload required.
 
 ---
 
-##  Power BI Dashboard
+## Power BI Dashboard
 
 Generate the data Power BI connects to:
 
@@ -153,7 +153,7 @@ This writes a star schema (`dim_students`, `dim_courses`, `dim_course_skills`,
 
 ---
 
-##  Data Schema
+## Data Schema
 
 | Table | Key columns |
 |-------|-------------|
@@ -164,7 +164,7 @@ This writes a star schema (`dim_students`, `dim_courses`, `dim_course_skills`,
 
 ---
 
-##  Capturing the demo
+## Capturing the demo
 
 1. Run the app and arrange the view you want.
 2. Take screenshots (or record a short GIF with [ScreenToGif](https://www.screentogif.com/) / macOS screen recording).
@@ -173,7 +173,7 @@ This writes a star schema (`dim_students`, `dim_courses`, `dim_course_skills`,
 
 ---
 
-##  Notes & Limitations
+## Notes & Limitations
 
 - The bundled dataset is **synthetic** and meant for demonstration. On this
   demo data the pass rate is very high, so the Random Forest pass/fail accuracy
@@ -185,7 +185,7 @@ This writes a star schema (`dim_students`, `dim_courses`, `dim_course_skills`,
 
 ---
 
-##  Roadmap
+## Roadmap
 
 Completed:
 - [x] Balanced-accuracy and confusion-matrix reporting for the classifier
@@ -205,4 +205,4 @@ Released under the MIT License — see [LICENSE](LICENSE).
 
 ##  Author
 
-**Gunjan Khadka** — [GitHub](https://github.com/gunjankhadka008) · [LinkedIn](https://www.linkedin.com/in/REPLACE-WITH-YOUR-LINKEDIN-HANDLE)
+**Gunjan Khadka** — [GitHub](https://github.com/gunjankhadka008) · [LinkedIn](https://www.linkedin.com/in/gunjan-khadka-31685b411/?skipRedirect=true)
