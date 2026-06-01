@@ -189,9 +189,19 @@ with tab_models:
     st.header("Predictive Models")
 
     st.subheader("Random Forest (Pass / Fail)")
-    rf_model, rf_acc, rf_importances, _ = A.random_forest_model(F)
+    rf_model, rf_acc, rf_importances, rf_test = A.random_forest_model(F)
     if rf_model is not None:
-        st.metric("RF accuracy", f"{rf_acc:.2%}")
+        _, y_test, y_pred, _ = rf_test
+        diag = A.classification_diagnostics(y_test, y_pred)
+        m1, m2 = st.columns(2)
+        m1.metric("RF accuracy", f"{diag['accuracy']:.2%}")
+        m2.metric("RF balanced accuracy", f"{diag['balanced_accuracy']:.2%}")
+        if diag["accuracy"] - diag["balanced_accuracy"] > 0.15:
+            st.caption("⚠️ Accuracy far exceeds balanced accuracy — the target is "
+                       "imbalanced (most students pass), so accuracy alone is "
+                       "misleading. See the confusion matrix below.")
+        st.markdown("**Confusion matrix**")
+        st.dataframe(diag["confusion_matrix"])
         st.dataframe(rf_importances)
         fig_rf = px.bar(rf_importances.head(10), x="Feature", y="Importance",
                         title="Random Forest Feature Importances", color="Importance")

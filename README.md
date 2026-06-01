@@ -1,4 +1,4 @@
-#  Curriculum Analytics Platform for Higher Education
+# 🎓 Curriculum Analytics Platform for Higher Education
 
 An interactive analytics application that helps academic departments understand
 student performance, identify difficult courses, flag at-risk students, and
@@ -9,9 +9,11 @@ dashboard layer for executive reporting.
 > Built on a configurable synthetic dataset so it runs out of the box, and
 > accepts your own institutional CSVs with no code changes.
 
+**▶️ Live demo:** _add your Streamlit Community Cloud URL here after deploying (see [Deploy](#-deploy-a-live-demo))._
+
 ---
 
-##  Features
+## ✨ Features
 
 - **KPI overview** — pass rate, mean GPA (10-point scale), average absences, and total enrollments, all responsive to sidebar filters (year, term, department, semester).
 - **Course difficulty index** — a composite score combining DFW rate, GPA, absences, and re-attempts to surface the hardest courses.
@@ -28,7 +30,7 @@ dashboard layer for executive reporting.
 
 ---
 
-##  Demo
+## 🖼️ Demo
 
 ![Overview dashboard](docs/images/overview.png)
 
@@ -38,7 +40,7 @@ Power BI Desktop and dropped in here.*
 
 ---
 
-##  Tech Stack
+## 🧱 Tech Stack
 
 | Layer | Tools |
 |-------|-------|
@@ -51,7 +53,7 @@ Power BI Desktop and dropped in here.*
 
 ---
 
-##  Project Structure
+## 🗂️ Project Structure
 
 ```
 curriculum-analytics-platform/
@@ -73,12 +75,12 @@ power the web app, the Power BI export, and any notebooks or tests.
 
 ---
 
-##  Getting Started
+## 🚀 Getting Started
 
 ### 1. Clone and set up
 
 ```bash
-git clone https://github.com/gunjankhadka008/curriculum-analytics-platform.git
+git clone https://github.com/<your-username>/curriculum-analytics-platform.git
 cd curriculum-analytics-platform
 
 python -m venv .venv
@@ -109,9 +111,33 @@ export OLLAMA_MODEL=llama3
 Without Ollama, the assistant still answers common questions using a built-in
 summary-based fallback.
 
+### 4. Run the tests
+
+```bash
+pytest
+```
+
+The suite covers the pure logic in `analytics.py` (data generation, joins, KPIs,
+models, and diagnostics).
+
 ---
 
-##  Power BI Dashboard
+## ☁️ Deploy a live demo
+
+The app deploys free on **Streamlit Community Cloud**, straight from this repo:
+
+1. Go to [share.streamlit.io](https://share.streamlit.io) and sign in with GitHub.
+2. Click **Create app** → select this repository, branch `main`, main file `streamlit_app.py`.
+3. Click **Deploy**. In a couple of minutes you'll get a public `*.streamlit.app` URL.
+4. Paste that URL into the **Live demo** line at the top of this README and into the
+   repository's **About** panel on GitHub.
+
+The default demo-data toggle means the deployed app works immediately, with no
+data upload required.
+
+---
+
+## 📊 Power BI Dashboard
 
 Generate the data Power BI connects to:
 
@@ -127,7 +153,7 @@ This writes a star schema (`dim_students`, `dim_courses`, `dim_course_skills`,
 
 ---
 
-##  Data Schema
+## 🧪 Data Schema
 
 | Table | Key columns |
 |-------|-------------|
@@ -138,7 +164,7 @@ This writes a star schema (`dim_students`, `dim_courses`, `dim_course_skills`,
 
 ---
 
-##  Capturing the demo
+## 📷 Capturing the demo
 
 1. Run the app and arrange the view you want.
 2. Take screenshots (or record a short GIF with [ScreenToGif](https://www.screentogif.com/) / macOS screen recording).
@@ -147,7 +173,7 @@ This writes a star schema (`dim_students`, `dim_courses`, `dim_course_skills`,
 
 ---
 
-##  Notes & Limitations
+## ⚠️ Notes & Limitations
 
 - The bundled dataset is **synthetic** and meant for demonstration. On this
   demo data the pass rate is very high, so the Random Forest pass/fail accuracy
@@ -159,7 +185,7 @@ This writes a star schema (`dim_students`, `dim_courses`, `dim_course_skills`,
 
 ---
 
-##  Roadmap
+## 🛣️ Roadmap
 
 - [ ] Replace heuristic at-risk scoring with a calibrated model
 - [ ] Add confusion matrices and balanced-accuracy reporting
@@ -168,11 +194,10 @@ This writes a star schema (`dim_students`, `dim_courses`, `dim_course_skills`,
 
 ---
 
-##  License
+## 📄 License
 
 Released under the MIT License — see [LICENSE](LICENSE).
 
-##  Author
+## 👤 Author
 
-**Gunjan Khadka** — [GitHub](https://github.com/gunjankhadka008) · [LinkedIn](https://www.linkedin.com/in/gunjan-khadka-31685b411?utm_source=share_via&utm_content=profile&utm_medium=member_android)
-
+**Gunjan Khadka** — [GitHub](https://github.com/<your-username>) · [LinkedIn](https://www.linkedin.com/in/<your-handle>)

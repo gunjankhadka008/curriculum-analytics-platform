@@ -22,7 +22,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, balanced_accuracy_score, confusion_matrix
 
 # 10-point grade scale used throughout the app.
 GRADE_POINTS = {"S": 10, "A": 9, "B": 8, "C": 7, "D": 6, "E": 5, "F": 0}
@@ -265,6 +265,25 @@ def knn_model(df: pd.DataFrame, random_state: int = 42):
     knn = KNeighborsClassifier(n_neighbors=5).fit(X_train, y_train)
     acc = knn.score(X_test, y_test)
     return knn, acc, (X_test, y_test, knn.predict(X_test))
+
+
+def classification_diagnostics(y_true, y_pred) -> dict:
+    """Accuracy, balanced accuracy, and a labeled confusion matrix.
+
+    Balanced accuracy matters here: on imbalanced targets (e.g. when almost
+    everyone passes), plain accuracy can look perfect while the model has
+    learned nothing useful about the minority class.
+    """
+    labels = sorted(pd.unique(y_true))
+    cm = confusion_matrix(y_true, y_pred, labels=labels)
+    cm_df = pd.DataFrame(cm,
+                         index=[f"actual_{l}" for l in labels],
+                         columns=[f"pred_{l}" for l in labels])
+    return {
+        "accuracy": accuracy_score(y_true, y_pred),
+        "balanced_accuracy": balanced_accuracy_score(y_true, y_pred),
+        "confusion_matrix": cm_df,
+    }
 
 
 # ---------------------------------------------------------------------------
