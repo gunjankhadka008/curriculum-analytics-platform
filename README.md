@@ -9,7 +9,7 @@ dashboard layer for executive reporting.
 > Built on a configurable synthetic dataset so it runs out of the box, and
 > accepts your own institutional CSVs with no code changes.
 
-**▶️ Live demo:** _add your Streamlit Community Cloud URL here after deploying (see [Deploy](#-deploy-a-live-demo))._
+**▶️ Live demo:** (https://curriculum-analytics-platform.streamlit.app/)
 
 ---
 
